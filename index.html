@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7 - jQuery vs Vanilla JS</title>
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <a href="#section-1">Секция 1</a>
+            <a href="#section-2">Секция 2</a>
+            <a href="#tabs">Вкладки</a>
+            <a href="#ajax">AJAX</a>
+            <a href="#ui">jQuery UI</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Лабораторная работа 7: jQuery vs Vanilla JS</h1>
+        
+        <!-- ЗАДАЧА A: ВКЛАДКИ -->
+        <section id="tabs">
+            <h2>Задача A: Переключение вкладок</h2>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab-1">О нас</button>
+                    <button class="tab-btn" data-tab="tab-2">Отзывы</button>
+                    <button class="tab-btn" data-tab="tab-3">Контакты</button>
+                </div>
+                <div class="tab-content active" id="tab-1">
+                    <h3>О нас</h3>
+                    <p>Мы команда разработчиков, изучающих современные веб-технологии. В этой лабораторной работе мы сравниваем jQuery с нативным JavaScript.</p>
+                </div>
+                <div class="tab-content" id="tab-2">
+                    <h3>Отзывы</h3>
+                    <p>"Отличная работа! jQuery действительно упрощает многие задачи, но современный JS тоже стал очень мощным." - Студент 1</p>
+                    <p>"Интересно видеть эволюцию веб-разработки!" - Студент 2</p>
+                </div>
+                <div class="tab-content" id="tab-3">
+                    <h3>Контакты</h3>
+                    <p>Email: lab7@example.com</p>
+                    <p>Телефон: +123-456-7890</p>
+                </div>
+            </div>
+
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3>jQuery подход</h3>
+                    <p><strong>Селекторы:</strong> $('.tab-btn')</p>
+                    <p><strong>События:</strong> .click()</p>
+                    <p><strong>Классы:</strong> .addClass() / .removeClass()</p>
+                    <p><strong>Data атрибуты:</strong> .data('tab')</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Vanilla JS подход</h3>
+                    <p><strong>Селекторы:</strong> querySelectorAll('.tab-btn')</p>
+                    <p><strong>События:</strong> addEventListener('click')</p>
+                    <p><strong>Классы:</strong> classList.add() / remove()</p>
+                    <p><strong>Data атрибуты:</strong> dataset.tab</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ЗАДАЧА B: ПЛАВНАЯ ПРОКРУТКА -->
+    <div id="section-1" class="section">
+        <div>
+            <h2>Секция 1</h2>
+            <p>Попробуйте нажать на ссылки в навигации - прокрутка будет плавной!</p>
+        </div>
+    </div>
+
+    <div id="section-2" class="section">
+        <div>
+            <h2>Секция 2</h2>
+            <p>Это работает благодаря перехвату кликов и использованию анимации.</p>
+        </div>
+    </div>
+
+    <!-- ЗАДАЧА C: AJAX -->
+    <div class="container">
+        <section id="ajax" class="ajax-section">
+            <h2>Задача C: AJAX запросы</h2>
+            <p>Загрузка данных с сервера без перезагрузки страницы</p>
+            <button id="loadQuote">Загрузить цитату</button>
+            <blockquote id="quote">
+                <p>Нажмите кнопку, чтобы загрузить случайную цитату...</p>
+                <cite>API: quotable.io</cite>
+            </blockquote>
+
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3>jQuery AJAX</h3>
+                    <p><strong>Метод:</strong> $.get() или $.ajax()</p>
+                    <p><strong>Простота:</strong> Один метод для всего</p>
+                    <p><strong>Обработка:</strong> Callback функции</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Vanilla JS Fetch</h3>
+                    <p><strong>Метод:</strong> fetch()</p>
+                    <p><strong>Мощность:</strong> Современный стандарт</p>
+                    <p><strong>Обработка:</strong> Promises (.then() / async-await)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЗАДАЧА D: jQuery UI -->
+        <section id="ui" class="ui-section">
+            <h2>Задача D: jQuery UI плагины</h2>
+            <p>jQuery UI предоставляет готовые компоненты интерфейса</p>
+            
+            <h3>Перетаскиваемый элемент (Draggable)</h3>
+            <div id="draggable" class="ui-widget-content">
+                <p>Перетащи меня!</p>
+            </div>
+
+            <h3>Календарь (Datepicker)</h3>
+            <input type="text" id="datepicker" placeholder="Выберите дату">
+
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3>jQuery UI</h3>
+                    <p><strong>Код:</strong> $('#el').draggable();</p>
+                    <p><strong>Преимущества:</strong> Одна строка кода</p>
+                    <p><strong>Минусы:</strong> Дополнительная библиотека</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Vanilla JS</h3>
+                    <p><strong>Код:</strong> HTML5 Drag & Drop API</p>
+                    <p><strong>Преимущества:</strong> Нативное решение</p>
+                    <p><strong>Минусы:</strong> Больше кода, сложнее</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
