@@ -1,9 +1,10 @@
-## Ответы на вопросы: ##
+## скрины ##
 <img width="2493" height="1403" alt="image" src="https://github.com/user-attachments/assets/9d270772-18dd-414e-aca1-529aa4074a61" />
 <img width="2517" height="1394" alt="image" src="https://github.com/user-attachments/assets/b8b17a0d-d853-474c-9826-8f1ee3b5b168" />
 <img width="2515" height="1404" alt="image" src="https://github.com/user-attachments/assets/84086c1b-5dda-4376-b7b2-ffc00bbfce69" />
 
-## скрины ##
+## Ответы на вопросы: ##
+
 ## Какие jQuery-функции использовались? ##
 В работе использовались основные функции jQuery для работы с DOM и событиями:
 - `$(document).ready()` — ожидание полной загрузки DOM.
